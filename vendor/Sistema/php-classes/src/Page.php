@@ -1,6 +1,8 @@
 <?php 
 namespace Sistema;
 use Rain\Tpl;
+use \Sistema\Model\User;
+
 class Page {
 	private $tpl;
 	private $options = [];
@@ -19,8 +21,15 @@ class Page {
 				   );
 		Tpl::configure( $config );
 		$this->tpl = new Tpl;
+		
+		$this->tpl->assign("username", $_SESSION[User::SESSION]['username']);
+		$this->tpl->assign("email", $_SESSION[User::SESSION]['e-mail']);
+		
+		
+
 		$this->setData($this->options["data"]);
 		if ($this->options["header"] === true) $this->tpl->draw("header");
+		
 	}
 	private function setData($data = array())
 	{
@@ -34,7 +43,6 @@ class Page {
 		$this->setData($data);
 		return $this->tpl->draw($name, $returnHTML);
 	}
-	
 	//método para o footer
 	public function __destruct(){
 		if($this->options["footer"] === true) $this->tpl->draw("footer");

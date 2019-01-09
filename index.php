@@ -32,24 +32,40 @@ $app->get('/admin', function(){
     
     User::verificaLogin();
 
-    
     $page = new PageAdmin();
     
-    $user = "julio Pragana";
-    
-    $page->setTpl("index", array());
+
+    $page->setTpl("index");
 }); 
 
 $app->post('/login', function(){
 
     User::login($_POST["login"],$_POST["senha"]);
 
-    
-
     header("location: /admin");
     exit;   
 
 });
+
+$app->get('/admin/teste', function(){
+    
+    User::verificaLogin();
+
+    $page = new PageAdmin([
+        "header"=>false,
+        "footer"=>false
+    ]);
+
+    $sessao = array(
+        "idalu"=> "1",
+        "username" => "Julio Pragana"
+    );
+    
+    $page->setTpl("teste", array(
+        "sessao"=>$sessao
+    ));
+
+}); 
 
 $app->get('/admin/logout',function(){
 
@@ -58,6 +74,8 @@ $app->get('/admin/logout',function(){
     header("Location: /");
     exit;
 });
+
+
 
 
 
