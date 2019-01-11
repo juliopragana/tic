@@ -1,24 +1,164 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
-    
-    <!-- Main content -->
-    <section class="content">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
 
-      <!-- Your Page Content Here -->
-      
+   <!-- Content Header (Page header) -->
+   <section class="content">
 
-    </section>
-    <!-- /.content -->
+   <!-- Info boxes -->
+   <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-orange"><i class="fa fa-hashtag"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Solicitações</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red"><i class="fa fa-hashtag"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Devoluções</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-green"><i class="fa fa-hashtag"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Disponíveis</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow"><i class="fa fa-hashtag"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text">Manutenção</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
   </div>
-  <!-- /.content-wrapper -->
+  <!-- /.row -->
+
+
+  <!--  ############################ TABELA ########################### -->
+ 
+    <div class="row">
+      
+      <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header bg-gray">
+              <h3 class="box-title">Solicitações de Emprestimo</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped bg-gray">
+                  <thead>
+                      <tr>
+                        <th>Nome solicitante</th>
+                        <th>Chamado</th>
+                        <th>Unidade</th>
+                        <th>Setor</th>
+                        <th>Equipamento</th>
+                        <th>Data do empréstimo</th>
+                        <th>Data da devolução</th>
+                        <th>Ação</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                        <td>Júlio Pragana</td>
+                        <td>12457</td>
+                        <td>Recife</td>
+                        <td>TIC</td>
+                        <td>Notebook</td>
+                        <td>11/01/2019</td>
+                        <td>19/01/2019</td>
+                        <td>
+                          <div class="btn-group bg-red"><button ><span class="fa fa-dashboard"></span></button></div> 
+                        </td>
+                      </tr> 
+                  </tbody>
+              </table>
+            </div>
+        </div>
+   
+    
+    
+      <div class="row">
+        
+        <div class="col-xs-12">
+            <div class="box">
+              <div class="box-header bg-gray">
+                <h1 class="box-title">Controle de empréstimos</h1>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <table id="example2" class="table table-bordered table-striped bg-gray">
+                    <thead>
+                        <tr>
+                          <th>Nome solicitante</th>
+                          <th>Unidade</th>
+                          <th>Setor</th>
+                          <th>Equipamento</th>
+                          <th>Data do empréstimo</th>
+                          <th>Data da devolução</th>
+                          <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+              </div>
+          </div>
+      
+        </section>  
+</div> 
+
+
+
+
+

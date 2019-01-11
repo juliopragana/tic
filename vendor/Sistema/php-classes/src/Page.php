@@ -22,9 +22,12 @@ class Page {
 		Tpl::configure( $config );
 		$this->tpl = new Tpl;
 		
-		$this->tpl->assign("username", $_SESSION[User::SESSION]['username']);
-		$this->tpl->assign("email", $_SESSION[User::SESSION]['e-mail']);
-		
+		if(isset($_SESSION[User::SESSION])){
+
+			$this->tpl->assign("username", $_SESSION[User::SESSION]['username']);
+			$this->tpl->assign("email", $_SESSION[User::SESSION]['e-mail']);
+
+		};
 		
 
 		$this->setData($this->options["data"]);

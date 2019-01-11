@@ -117,7 +117,7 @@ body {
 }
 .fixed .content-wrapper,
 .fixed .right-side {
-  padding-top: 50px;
+  padding-top: 0px;
 }
 @media (max-width: 767px) {
   .fixed .content-wrapper,
@@ -146,8 +146,10 @@ body.hold-transition .main-header .logo {
   padding: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: -250px;
   padding-left: 15px;
   padding-right: 15px;
+ 
 }
 /* H1 - H6 font */
 h1,

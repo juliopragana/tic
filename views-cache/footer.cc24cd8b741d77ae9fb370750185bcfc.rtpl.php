@@ -93,12 +93,43 @@
 <script src="/res/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/res/admin/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="/res/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/res/admin/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="/res/admin/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/res/admin/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/res/admin/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="/res/admin/dist/js/demo.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
+<script src="https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"></script>
+<!-- page script -->
+
+
+
+<script>
+  $(function () {
+    $("#example1").DataTable(
+      {
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+            }
+
+      });
+    $('#example2').DataTable(
+      {
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
+            }
+
+      });
+  }
+  );
+</script>
+    
+
 </body>
 </html>
