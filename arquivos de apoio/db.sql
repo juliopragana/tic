@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `tb_user` (
   `id_user` INT NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
   `e-mail` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(255) NOT NULL,
   `dataregistro` TIMESTAMP NULL,
   PRIMARY KEY (`id_user`))
 ENGINE = InnoDB;
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `tb_equipamentos` (
   `tipo` VARCHAR(45) NOT NULL,
   `marca` VARCHAR(45) NOT NULL,
   `modelo` VARCHAR(45) NOT NULL,
-  `configuracao` ENUM("processador", "memoria") NOT NULL,
+  `configuracao` LONGTEXT NOT NULL,
   `tombo` VARCHAR(45) NOT NULL,
   `status` INT NOT NULL,
   PRIMARY KEY (`id_equipamento`))

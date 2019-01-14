@@ -19,9 +19,10 @@
    <div class="row">
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-orange"><i class="fa fa-hashtag"></i></span>
+        <span class="info-box-icon bg-orange"><i class="fa fa-laptop"></i></span>
 
         <div class="info-box-content">
+          <span class="info-box-text"><b>Notebook</b></span>
           <span class="info-box-text">Solicitações</span>
           <span class="info-box-number">0</span>
         </div>
@@ -32,9 +33,10 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-hashtag"></i></span>
+        <span class="info-box-icon bg-red"><i class="fa fa-laptop"></i></span>
 
         <div class="info-box-content">
+          <span class="info-box-text"><b>Notebook</b></span>
           <span class="info-box-text">Devoluções</span>
           <span class="info-box-number">0</span>
         </div>
@@ -49,9 +51,10 @@
 
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-green"><i class="fa fa-hashtag"></i></span>
+        <span class="info-box-icon bg-green"><i class="fa fa-laptop"></i></span>
 
         <div class="info-box-content">
+          <span class="info-box-text"><b>Notebook</b></span>
           <span class="info-box-text">Disponíveis</span>
           <span class="info-box-number">0</span>
         </div>
@@ -62,10 +65,76 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-yellow"><i class="fa fa-hashtag"></i></span>
+        <span class="info-box-icon bg-yellow"><i class="fa fa-laptop"></i></span>
+
+        <div class="info-box-content ">
+          <span class="info-box-text"><b>Notebook</b></span>
+          <span class="info-box-text">Reservados</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Info boxes -->
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-orange"><i class="fa fa-desktop"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">Manutenção</span>
+          <span class="info-box-text"><b>Desktop</b></span>
+          <span class="info-box-text">Solicitações</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-red"><i class="fa fa-desktop"></i></span>
+
+        <div class="info-box-content">
+            <span class="info-box-text"><b>Desktop</b></span>
+          <span class="info-box-text">Devoluções</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+
+    <!-- fix for small devices only -->
+    <div class="clearfix visible-sm-block"></div>
+
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-green"><i class="fa fa-desktop"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text"><b>Desktop</b></span>
+          <span class="info-box-text">Disponíveis</span>
+          <span class="info-box-number">0</span>
+        </div>
+        <!-- /.info-box-content -->
+      </div>
+      <!-- /.info-box -->
+    </div>
+    <!-- /.col -->
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="info-box">
+        <span class="info-box-icon bg-yellow"><i class="fa fa-desktop"></i></span>
+
+        <div class="info-box-content">
+          <span class="info-box-text"><b>Desktop</b></span>
+          <span class="info-box-text">Reservado</span>
           <span class="info-box-number">0</span>
         </div>
         <!-- /.info-box-content -->
@@ -77,13 +146,14 @@
   <!-- /.row -->
 
 
+
   <!--  ############################ TABELA ########################### -->
  
     <div class="row">
       
       <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header bg-gray">
+          <div class="box bg-gray">
+            <div class="box-header bg-black">
               <h3 class="box-title">Solicitações de Emprestimo</h3>
             </div>
             <!-- /.box-header -->
@@ -124,8 +194,8 @@
       <div class="row">
         
         <div class="col-xs-12">
-            <div class="box">
-              <div class="box-header bg-gray">
+            <div class="box bg-gray">
+              <div class="box-header bg-black">
                 <h1 class="box-title">Controle de empréstimos</h1>
               </div>
               <!-- /.box-header -->
