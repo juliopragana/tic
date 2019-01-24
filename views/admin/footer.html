@@ -19,23 +19,10 @@
     <div class="tab-content">
       <!-- Home tab content -->
       <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
+        
         <!-- /.control-sidebar-menu -->
 
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        
         <ul class="control-sidebar-menu">
           <li>
             <a href="javascript:;">
@@ -62,16 +49,16 @@
       <!-- Settings tab content -->
       <div class="tab-pane" id="control-sidebar-settings-tab">
         <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
+          <h3 class="control-sidebar-heading">Opções Gerais</h3>
 
           <div class="form-group">
             <label class="control-sidebar-subheading">
-              Report panel usage
+                Uso do painel de relatórios
               <input type="checkbox" class="pull-right" checked>
             </label>
 
             <p>
-              Some information about this general settings option
+              Algumas informações sobre essa opção de configurações gerais.
             </p>
           </div>
           <!-- /.form-group -->
@@ -111,13 +98,13 @@
 
 
 <script>
+
   $(function () {
     $("#example1").DataTable(
-      {
+      {      
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
             }
-
       });
     $('#example2').DataTable(
       {

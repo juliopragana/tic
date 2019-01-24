@@ -152,14 +152,14 @@
     <div class="row">
       
       <div class="col-xs-12">
-          <div class="box bg-gray">
+          <div class="box">
             <div class="box-header bg-black">
               <h3 class="box-title">Solicitações de Emprestimo</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped bg-gray">
-                  <thead>
+              <table id="example1" class="table table-bordered table-striped">
+                  <thead class="bg-gray">
                       <tr>
                         <th>Nome solicitante</th>
                         <th>Chamado</th>
@@ -183,7 +183,8 @@
                         <td>
                           <div class="btn-group bg-red"><button ><span class="fa fa-dashboard"></span></button></div> 
                         </td>
-                      </tr> 
+                      </tr>
+                      
                   </tbody>
               </table>
             </div>
@@ -194,33 +195,51 @@
       <div class="row">
         
         <div class="col-xs-12">
-            <div class="box bg-gray">
+            <div class="box">
               <div class="box-header bg-black">
                 <h1 class="box-title">Controle de empréstimos</h1>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="example2" class="table table-bordered table-striped bg-gray">
-                    <thead>
+                <table id="example2" class="table table-bordered table-striped">
+                    
+                    <thead class="bg-gray">
                         <tr>
-                          <th>Nome solicitante</th>
-                          <th>Unidade</th>
-                          <th>Setor</th>
-                          <th>Equipamento</th>
-                          <th>Data do empréstimo</th>
-                          <th>Data da devolução</th>
-                          <th>Ação</th>
+                          <th style="text-align: center">Nome solicitante</th>
+                          <th>Nº Chamado</th>
+                          <th style="text-align: center">Unidade</th>
+                          <th style="text-align: center">Setor</th>
+                          <th style="text-align: center">Equipamento</th>
+                          <th style="text-align: center">Data do empréstimo</th>
+                          <th style="text-align: center">Data da devolução</th>
+                          <th style="text-align: center">Status do Emprestimo</th>
+                          <th style="text-align: center">Ação</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <!-- <tr>
+                    
+                   
+                    <tbody> 
+                      {loop="$emps"}  
+                      <tr>
+                          <td>{$value.nome}</td>
+                          <td>{$value.num_chamado}</td>
+                          <td style="text-align: center">{$value.unidade}</td>
+                          <td style="text-align: center">{$value.setor}</td>
+                          <td style="text-align: center">{$value.tipo}</td>
+                          <td style="text-align: center">{$value.data_entrega}</td>
+                          <td style="text-align: center">{$value.data_receber}</td>
+                          {if="$value.status_emprestimo=1"}
+                          <td class="bg-green" style="text-align: center">No prazo</td>
+                          {/if}
+              
+                          {if="$value.status_emprestimo=2"}
+                          <td class="bg-red" style="text-align: center">Atrasado</td>
+                          {/if}
                           <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr> -->
+                     </tr> 
+                     {/loop}
                     </tbody>
+                   
                 </table>
               </div>
           </div>

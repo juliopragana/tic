@@ -9,6 +9,7 @@ use \Slim\Slim;
 use \Sistema\Page;
 use \Sistema\PageAdmin;
 use \Sistema\Model\User;  
+use \Sistema\Model\Emprestimo; 
 
 $app = new Slim();
 
@@ -31,11 +32,15 @@ $app->get('/', function() {
 $app->get('/admin', function(){
     
     User::verificaLogin();
+    
+    $emps = Emprestimo::listAll();
 
     $page = new PageAdmin();
     
 
-    $page->setTpl("index");
+    $page->setTpl("index", array(
+        "emps"=>$emps
+    ));
 }); 
 
 $app->post('/login', function(){
