@@ -201,7 +201,7 @@
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="example2" class="table table-bordered table-striped">
+                <table data-order='[[7, "asc"]]' id="example2" class="table table-bordered table-striped">
                     
                     <thead class="bg-gray">
                         <tr>
@@ -228,13 +228,13 @@
                           <td style="text-align: center"><?php echo htmlspecialchars( $value1["tipo"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                           <td style="text-align: center"><?php echo htmlspecialchars( $value1["data_entrega"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                           <td style="text-align: center"><?php echo htmlspecialchars( $value1["data_receber"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                          <?php if( $value1["status_emprestimo"]=1 ){ ?>
-                          <td class="bg-green" style="text-align: center">No prazo</td>
+                          <?php if( $value1["status_emprestimo"]==1 ){ ?>
+                          <td class="bg-green" style="text-align: center;">No Prazo</td>
                           <?php } ?>
-              
-                          <?php if( $value1["status_emprestimo"]=2 ){ ?>
+                          <?php if( $value1["status_emprestimo"]==2 ){ ?>
                           <td class="bg-red" style="text-align: center">Atrasado</td>
-                          <?php } ?>
+                          <?php } ?>         
+                         
                           <td></td>
                      </tr> 
                      <?php } ?>

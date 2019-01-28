@@ -10,6 +10,7 @@ use \Sistema\Page;
 use \Sistema\PageAdmin;
 use \Sistema\Model\User;  
 use \Sistema\Model\Emprestimo; 
+use \Sistema\Model\Area;
 
 $app = new Slim();
 
@@ -80,7 +81,15 @@ $app->get('/admin/logout',function(){
     exit;
 });
 
+$app->get('/areas', function(){
 
+    $page = new PageAdmin();
+    $areas = Area::listArea();
+    $page->setTpl("areas", array(
+        "areas"=>$areas
+    ));
+
+});
 
 
 

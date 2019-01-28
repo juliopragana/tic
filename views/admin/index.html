@@ -201,7 +201,7 @@
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <table id="example2" class="table table-bordered table-striped">
+                <table data-order='[[7, "asc"]]' id="example2" class="table table-bordered table-striped">
                     
                     <thead class="bg-gray">
                         <tr>
@@ -228,13 +228,13 @@
                           <td style="text-align: center">{$value.tipo}</td>
                           <td style="text-align: center">{$value.data_entrega}</td>
                           <td style="text-align: center">{$value.data_receber}</td>
-                          {if="$value.status_emprestimo=1"}
-                          <td class="bg-green" style="text-align: center">No prazo</td>
+                          {if="$value.status_emprestimo==1"}
+                          <td class="bg-green" style="text-align: center;">No Prazo</td>
                           {/if}
-              
-                          {if="$value.status_emprestimo=2"}
+                          {if="$value.status_emprestimo==2"}
                           <td class="bg-red" style="text-align: center">Atrasado</td>
-                          {/if}
+                          {/if}         
+                         
                           <td></td>
                      </tr> 
                      {/loop}
