@@ -1,4 +1,4 @@
- <!-- Main Footer -->
+<?php if(!class_exists('Rain\Tpl')){exit;}?> <!-- Main Footer -->
  <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
@@ -102,7 +102,7 @@
   $(function () {
     $("#example1").DataTable(
       {      
-           
+            ordering:  false,
             "language": {
                 "url": "https://cdn.datatables.net/plug-ins/1.10.19/i18n/Portuguese-Brasil.json"
             }

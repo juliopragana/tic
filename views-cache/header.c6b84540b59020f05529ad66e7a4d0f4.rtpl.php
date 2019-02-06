@@ -255,21 +255,7 @@ desired effect
       <ul class="sidebar-menu">
          <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="/admin/users"><i class="fa fa-dashboard"></i> <span>Painel de Controle</span></a></li>
-        <li><a href="/abrir-chamado"><i class="fa fa-plus"></i> <span>Abrir Chamado</span></a></li>
-        <li><a href="#"><i class="fa fa-archive"></i> <span>Controle de Estoque</span></a></li>
-        <li><a href="/admin/usuarios"><i class="fa fa-users"></i> <span>Cadastro de usuários</span></a></li>
-        <li class="treeview">
-            <a href="#"><i class="fa fa-wrench"></i> <span>Configuração</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="/areas" class="fa fa-folder-o"> Area</a></li>
-              <li><a href="#" class="fa fa-folder-o"> Problema</a></li>
-              <li><a href="#" class="fa fa-folder-o"> Sub-Problema</a></li>
-            </ul>
-          </li>
+        <li><a href="/abrir-chamado"><i class="fa fa-plus"></i> <span>Solicitar empréstimo</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>

@@ -3,6 +3,7 @@ namespace Sistema\Model;
 
 use \Sistema\DB\Sql;
 use \Sistema\Model;
+use DateTime;
 
 class User extends Model{   
 
@@ -39,6 +40,30 @@ class User extends Model{
             
         }
 
+    }
+
+    public static function listAll(){
+        
+        $sql = new Sql();
+
+        return $sql->select("SELECT * FROM tb_user ORDER BY username ASC");
+    }
+
+    public function save(){
+        $sql = new Sql();
+        date_default_timezone_set('America/Cayenne');
+        $dt = new DateTime();
+        $dt->format("d/m/Y H:i:s");
+
+        $results = $sql->select("CALL sp_user_save(:username, :email, :senha, :dataregistro, :status_user)", array(
+                ":username"=>$this->getusername(),
+                ":email"=>$this->getemail(),
+                ":senha"=>$this->getsenha(),
+                ":dataregistro"=>$dt,
+                ":status_user"=>$this->getstaus_user()
+        ));
+
+        $this->setData($results[0]);
     }
 
     public static function verificaLogin(){

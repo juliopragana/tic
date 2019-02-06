@@ -16,18 +16,29 @@ $app = new Slim();
 
 $app->config('debug', true);
 
+# ########################################## ADMIN ########################################### #
+
 //rota raiz
 $app->get('/', function() {
 
     User::verificaSessao();
 
-    $page = new Page([
+    $page = new PageAdmin([
         "header"=>false,
         "footer"=>false
     ]);
     
-    $page->setTpl("login");
+    $page->setTpl("user/login");
     
+});
+
+$app->post('/login', function(){
+
+    User::login($_POST["login"],$_POST["senha"]);
+
+    header("location: /admin");
+    exit;   
+
 });
 
 $app->get('/admin', function(){
@@ -44,14 +55,7 @@ $app->get('/admin', function(){
     ));
 }); 
 
-$app->post('/login', function(){
 
-    User::login($_POST["login"],$_POST["senha"]);
-
-    header("location: /admin");
-    exit;   
-
-});
 
 $app->get('/admin/teste', function(){
     
@@ -81,8 +85,53 @@ $app->get('/admin/logout',function(){
     exit;
 });
 
-$app->get('/areas', function(){
+################################# ################################## ##########################################
+#################################                USER                ##########################################
+###############################################################################################################
 
+$app->get('/admin/usuarios', function(){
+    User::verificaLogin();
+
+    $users = User::listAll();
+
+    $page = new PageAdmin();
+
+    $page->setTpl("usuarios", array(
+        "users"=>$users
+    ));
+
+});
+
+$app->get('/admin/cadastro-usuario', function(){
+    User::verificaLogin();
+
+    $page = new PageAdmin();
+
+    $page->setTpl("cadastro-usuario");
+
+});
+
+$app->post('/admin/cadastro-usuario', function(){
+    User::verificaLogin();
+
+    $user = new User();
+
+    $_POST["status_user"] = (isset($_POST["inadmin"])) ?1:0;
+
+    $user->setData($_POST);
+    
+    $user->save();
+
+    header("Location: /admin/usuarios");
+    
+});
+
+################################# Areas ###################################################
+
+
+$app->get('/areas', function(){
+    User::verificaLogin();
+    
     $page = new PageAdmin();
     $areas = Area::listArea();
     $page->setTpl("areas", array(
@@ -91,7 +140,32 @@ $app->get('/areas', function(){
 
 });
 
+$app->get('/abrir-chamado', function(){
 
+    User::verificaLogin();
+
+    $page = new PageAdmin();
+
+    $areas = Area::listArea();
+
+    $page->setTpl("abrir-chamado", array(
+        "areas"=>$areas
+    ));
+
+});
+
+
+
+
+
+$app->get('/home', function(){
+
+    User::verificaLogin();
+
+    $page = new Page();
+
+    $page->setTpl("user/index");
+});
 
 
 $app->run();

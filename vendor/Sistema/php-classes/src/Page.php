@@ -12,7 +12,7 @@ class Page {
 		"data"=>[]
 	];
 	//método para o header
-	public function __construct($opts = array(), $tpl_dir = "/views/"){
+	public function __construct($opts = array(), $tpl_dir = "/views/user/"){
 		$this->options = array_merge($this->defaults, $opts);
 		$config = array(
 					"tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,
@@ -25,8 +25,8 @@ class Page {
 		if(isset($_SESSION[User::SESSION])){
 
 			$this->tpl->assign("username", $_SESSION[User::SESSION]['username']);
-			$this->tpl->assign("email", $_SESSION[User::SESSION]['e-mail']);
-			$this->tpl->assign("status", $_SESSION[User::SESSION]['status']);
+			$this->tpl->assign("email", $_SESSION[User::SESSION]['email']);
+			$this->tpl->assign("status", $_SESSION[User::SESSION]['status_user']);
 
 		};
 		
