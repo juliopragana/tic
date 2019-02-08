@@ -24,6 +24,9 @@
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form" action="/admin/cadastro-usuario" method="POST">
+
+              
+
               <div class="box-body">
                 <div class="form-group">
                   <label for="desperson">Nome</label>
@@ -39,7 +42,7 @@
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="status_user" value="1"> Acesso de Administrador
+                    <input type="checkbox" name="status_user" id="status_user" value="1"> Acesso de Administrador
                   </label>
                 </div>
               </div>

@@ -5,6 +5,9 @@ session_start();
 
 require_once("vendor/autoload.php");
 
+date_default_timezone_set('America/Cayenne');
+
+
 use \Slim\Slim;
 use \Sistema\Page;
 use \Sistema\PageAdmin;
@@ -107,7 +110,10 @@ $app->get('/admin/cadastro-usuario', function(){
 
     $page = new PageAdmin();
 
-    $page->setTpl("cadastro-usuario");
+    $page->setTpl("cadastro-usuario", array(
+        'error'=>User::getError()
+    
+    ));
 
 });
 
@@ -116,14 +122,29 @@ $app->post('/admin/cadastro-usuario', function(){
 
     $user = new User();
 
-    $_POST["status_user"] = (isset($_POST["inadmin"])) ?1:0;
+    $_POST["status_user"] = (isset($_POST["status_user"])) ?1:0;
 
+   
+    $dt = date('d/m/Y H:i:s', time());
+
+    $_POST["dataregistro"] = $dt;
+ 
     $user->setData($_POST);
-    
-    $user->save();
 
-    header("Location: /admin/usuarios");
+    try{
+        $user->save();
+
+        header("Location: /admin/");
+        exit();   
+
+    } catch(Exception $e){
+        User::setError($e->getMessage());
+    }
     
+    
+    
+
+     
 });
 
 ################################# Areas ###################################################

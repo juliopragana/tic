@@ -7,7 +7,14 @@ use DateTime;
 
 class User extends Model{   
 
+
     const SESSION = "User";
+    const ERROR = "UserError";
+    const SUCCESS = "UserSucesss";
+    
+########################### LOGIN ############################
+
+#################### LOGIN
 
     public static function login($login, $senha){
 
@@ -42,6 +49,10 @@ class User extends Model{
 
     }
 
+    #################### CRUD ######################################
+
+    ################## LISTAR
+
     public static function listAll(){
         
         $sql = new Sql();
@@ -49,22 +60,30 @@ class User extends Model{
         return $sql->select("SELECT * FROM tb_user ORDER BY username ASC");
     }
 
+    ################ SALVAR 
+
     public function save(){
         $sql = new Sql();
-        date_default_timezone_set('America/Cayenne');
-        $dt = new DateTime();
-        $dt->format("d/m/Y H:i:s");
-
-        $results = $sql->select("CALL sp_user_save(:username, :email, :senha, :dataregistro, :status_user)", array(
+        
+        try{
+            $results = $sql->select("CALL sp_user_saves(:username, :email, :senha, :dataregistro, :status_user)", array(
                 ":username"=>$this->getusername(),
                 ":email"=>$this->getemail(),
                 ":senha"=>$this->getsenha(),
-                ":dataregistro"=>$dt,
-                ":status_user"=>$this->getstaus_user()
+                ":dataregistro"=>$this->getdataregistro(),
+                ":status_user"=>$this->getstatus_user()
         ));
 
         $this->setData($results[0]);
+        } catch (Exception $e){
+            return User::setError($e);
+        }
+        
+        
     }
+    ######################### SESSÃO ########################
+
+    #################### VERIFICA SE O USUÁRIO ESTÁ LOGADO
 
     public static function verificaLogin(){
         if(
@@ -79,6 +98,8 @@ class User extends Model{
         }
     }
 
+    #################### VERIFICA SE EXISTE SESSÃO
+
     public static function verificaSessao(){
         if(isset($_SESSION[User::SESSION])){
             header("Location: /admin");
@@ -86,10 +107,35 @@ class User extends Model{
         }
     }
 
-    
+    #################### FAZ LOGOF
+
     public static function logout(){
         $_SESSION[User::SESSION] = NULL;
     }
+
+
+    ######################################### ERROS ###################################################
+
+    public static function setError($msg){
+       
+        $_SESSION[User::ERROR] = $msg;
+    }
+
+    public static function getError(){
+        
+        $msg = (isset($_SESSION[User::ERROR]) && $_SESSION[User::ERROR]) ? $_SESSION[User::ERROR] : '';
+
+        user::clearError();
+
+        return $msg;
+
+    }
+
+    public static function clearError(){
+        
+        $_SESSION[User::ERROR] = NULL;
+    }
+
 
 }
 
