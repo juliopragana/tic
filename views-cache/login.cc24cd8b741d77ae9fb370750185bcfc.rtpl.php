@@ -9,18 +9,29 @@
 </head>
 
 <body style="" class="bg-light my-0">
-  <div class="py-0 text-center bg-light my-0" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <div class="py-0 text-center bg-light my-0" style="background-position: top left;	background-size: 100%;	background-repeat: repeat;">
     <div class="container-fluid w-100">
       <div class="row w-100 my-5">
-        <div class="col-md-8 w-100" style="	background-image: url(../res/img/capa.jpg);	background-position: center;	background-size: 100%;	background-repeat: no-repeat;"></div>
+        <div class="col-md-8 w-100" style="	background-image: url(../res/img/capa.jpg); background-position: center;	background-size: 100%;	background-repeat: no-repeat;"></div>
         <div class="mx-auto col-md-4 col-10 bg-transparent p-5" style="">
-          <img class="img-fluid d-block my-3 mx-auto" src="../res/img/logo2.png">
+          <img class="img-fluid d-block my-4 mx-auto" src="../res/img/logo2.png">
+          <?php if( $error != '' ){ ?>
+          <div class="alert alert-danger">
+            <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>
+          </div>
+          <?php } ?>
           <form action="/login" method="post">
             <div class="form-group"> <input type="text" class="form-control" placeholder="Digite seu usuário" id="login" required="required" name="login"> </div>
-            <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Digite sua senha" id="senha" name="senha"> <small class="form-text text-muted text-right">
+            <div class="form-group mb-3"> <input type="password" class="form-control" placeholder="Digite sua senha" id="senha" name="senha"> 
+                <small class="form-text text-muted text-right">
                 <a href="#" class="text-center text-dark"> Esqueceu a senha?</a>
-              </small> </div> <button type="submit" class="btn btn-block btn-dark"><i class="fa fa-user fa-fw"></i> Acessar</button>
-          </form>
+                </small> 
+            </div> 
+            <button type="submit" class="btn btn-block btn-dark"><i class="fa fa-user fa-fw"></i> Acessar</button>
+            </form>
+            <a href="<?php echo htmlspecialchars( $loginUrl, ENT_COMPAT, 'UTF-8', FALSE ); ?>"><button class="btn btn-block btn-primary my-2"><i class="fa fa-user fa-fw"></i> Acessar</button></a>
+            
+            
         </div>
       </div>
     </div>

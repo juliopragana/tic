@@ -64,22 +64,20 @@ class User extends Model{
 
     public function save(){
         $sql = new Sql();
-        
-        try{
-            $results = $sql->select("CALL sp_user_saves(:username, :email, :senha, :dataregistro, :status_user)", array(
+
+        $results = $sql->select("CALL sp_user_save(:username, :email, :senha, :dataregistro, :status_user, :image)", array(
                 ":username"=>$this->getusername(),
                 ":email"=>$this->getemail(),
                 ":senha"=>$this->getsenha(),
                 ":dataregistro"=>$this->getdataregistro(),
-                ":status_user"=>$this->getstatus_user()
+                ":status_user"=>$this->getstatus_user(),
+                ":image"=>$this->getimage()
         ));
+        
+        if($results === 0) return $error = User::setError();
 
         $this->setData($results[0]);
-        } catch (Exception $e){
-            return User::setError($e);
-        }
-        
-        
+           
     }
     ######################### SESSÃO ########################
 
@@ -136,6 +134,26 @@ class User extends Model{
         $_SESSION[User::ERROR] = NULL;
     }
 
+    ######################################## SUCCESS ####################################################
+    public static function setSuccess($msg = array()){
+       
+        $_SESSION[User::SUCCESS] = $msg;
+    }
+
+    public static function getSuccess(){
+        
+        $msg = (isset($_SESSION[User::SUCCESS]) && $_SESSION[User::SUCCESS]) ? $_SESSION[User::SUCCESS] : '';
+
+        user::clearError();
+
+        return $msg;
+
+    }
+
+    public static function clearSuccess(){
+        
+        $_SESSION[User::SUCCESS] = NULL;
+    }
 
 }
 
